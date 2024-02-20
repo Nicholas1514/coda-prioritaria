@@ -34,6 +34,7 @@ namespace prioritaria
 						Console.WriteLine("Inserisci elemento");
 						object value = Console.ReadLine();
 						cp.Aggiunta(value);
+						cp.Ar.Sort();
 						Console.WriteLine("Elemento aggiunto");
 						break;
 						case 2:
@@ -49,17 +50,20 @@ namespace prioritaria
 					case 4:
 						object primo = cp.EstraiPrimo();
 						Console.WriteLine($"Primo: {primo}");
+						cp.Ar.Sort();
 						break;
 						case 5:
 						object ultimo = cp.EstraiUltimo();
 						Console.WriteLine($"Primo: {ultimo}");
+						cp.Ar.Sort();
 						break;
 						case 6:
 						bool controllo = cp.IsEmpty();
 						Console.WriteLine("La lista è vuota? " + controllo);
 						break;
 						case 7:
-						foreach(var item in cp.Ar)
+						cp.Ar.Sort();
+						foreach (var item in cp.Ar)
 						{
 							Console.WriteLine(item);
 						}
